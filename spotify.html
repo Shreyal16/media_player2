@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class>
+    <header class="">
+        <nav class="nav">
+            <h1 class="logo pointer"> <img src="music.svg" alt="">My Music</h1>
+            <div class="buttons ">
+                <button class="signin button poppins ">Sign in</button>
+                <button class="login button poppins">Log in</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="hori-scroll">
+
+        </div>
+
+        <div class="your flex poppins">
+
+            <div class="left grey border-radius">
+
+                <h2>Your Playlists</h2>
+
+            </div>
+
+            <div class="right grey border-radius">
+                <div class="rightcontent"></div>
+                <h2>Your songs</h2>
+
+                <div>
+                    <ul class="songlist">
+
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="playbar flex column alignitems border-radius">
+
+            <div class="stats flex alignitems">
+                <div class="songname_c flex alignitems poppins">
+                    <div class="songname"></div>
+                </div>
+
+                <div class="songbuttons flex filter">
+                    <img id="previous" src="previous.svg" alt="">
+                    <img id="play" src="play.svg" alt="">
+                    <img id="next" src="next.svg" alt="">
+                </div>
+
+                <div class="vbutton alignitems flex">
+<div class="volume_c flex alignitems">
+                    <img class="pointer filter" width="25px" class="filter" src="volume.svg" alt=""><input class="volume pointer" type="range">
+                </div>
+                    <div class="duration poppins">
+                        00:00/00:00
+                    </div>
+                </div>
+                
+            </div>
+<div class="seekbar flex alignitems">
+    <div class="circle"></div>
+</div>
+            
+        </div>
+
+    </main>
+
+
+
+</body>
+
+</html>
+
+<script src="script.js"></script>

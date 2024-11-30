@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Style the scrollbar */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+    height: 10px; /* Height of the horizontal scrollbar */
+  }
+  
+  /* Style the scrollbar track (the background of the scrollbar) */
+  ::-webkit-scrollbar-track {
+    background: #333333; /* Dark background for the track */
+    border-radius: 10px; /* Optional: round the corners of the track */
+  }
+  
+  /* Style the scrollbar thumb (the draggable part) */
+  ::-webkit-scrollbar-thumb {
+    background: #555; /* Dark thumb color */ 
+    border-radius: 10px; /* Optional: round the corners of the thumb */
+    border: 1px solid #333333; /* Optional: adds a border around the thumb */
+  }
+  
+  /* Style the scrollbar thumb on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #777; /* Lighter color on hover */
+  }
+  
+  /* Style the scrollbar corner (where horizontal and vertical scrollbars meet) */
+  ::-webkit-scrollbar-corner {
+    background: #333; /* Same color as the track */
+  }
+  
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+body{
+    background-color: black;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+ color: white;
+ margin: 0 10px;
+ font-family: "Poppins", serif;;
+ /* font-weight: 500; */
+ padding: 0 16px;
+ 
+}
+.logo img{
+    width: 35px;
+    filter: invert();
+}
+
+
+.nav{
+    height: 10vh;
+    padding: 10px 0;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px 0 0;
+}
+
+.button{
+    cursor: pointer;
+    padding: 5px 15px;
+    margin: 0 5px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.signin{
+    background-color: black;
+    color: rgb(207, 206, 206);
+    font-weight: 500;
+}
+.signin:hover{
+    color: white;
+    transform: scale(1.1);
+
+}
+.login{
+    background-color: white;
+    
+    color: black; 
+    font-style: bold;
+    font-weight: 500;
+}
+
+.login:hover{
+    transform: scale(1.1);
+}
+
+.hori-scroll{
+    height: 10vh;
+}
+.left{
+    width: 65vw;
+    height: 80vh;
+    color: white;
+    margin: 0 8px;
+}
+
+.your h2{
+    color: white;
+    margin: 15px 0 10px 18px;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 34vw;
+    height: 80vh;
+    margin: 0 8px;
+    
+}
+
+.your{
+
+    justify-content: space-between;
+}
+
+.songlist{
+    height: 60vh;
+    width: 30vw;
+    font-size: 12px;
+    color: white;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px 0 0 15px;
+    word-wrap: break-word;
+    overflow-x: none;
+    overflow-y: scroll;
+   
+}
+.songlist li {
+    cursor: pointer;
+}
+/* .rightcontent{
+    padding: 10px 0 0 25px;
+} */
+
+.playbar{
+    justify-content: space-evenly;
+position: fixed;
+bottom: 20px;
+left: 20vw;
+margin: auto;
+width: 60vw;
+height: 85px;
+border-radius: 20px;
+background-color: #292929;
+color: white;
+}
+
+.songname {
+    min-width: 150px;
+    max-width: 150px;
+    font-size: 12px;
+    padding: 0 0 0 20px;
+}
+
+.songname_c {
+    height: 50px;
+    min-width: 200px;  /* Width of the container (or specify a fixed width like 300px) */
+    overflow: hidden;  /* Hide any content that overflows */
+    white-space: nowrap;  /* Prevent the text from wrapping */
+}
+
+.songname {
+    display: inline-block;
+     /* Start the text offscreen on the right */
+    animation: scroll-left 10s linear 4s infinite; /* Scroll left animation */
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+.songnameanm{
+    animation: scroll-left 10s linear 4s infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%); /* Start from right side */
+    }
+    100% {
+        transform: translateX(-100%); /* End on the left side */
+    }
+}
+
+
+.songbuttons{
+    gap: 12px;
+    
+}
+
+.songbuttons img {
+    cursor: pointer;
+    width: 25px;
+    
+}
+
+.vbutton{
+    gap: 15px;
+ padding: 0 10px 0 0;
+}
+.volume_c{
+    gap: 5px;
+}
+.duration{
+    font-size: 12px;
+}
+
+.seekbar{
+    position: relative;
+    height: 2px;
+    background-color: white;
+    width: 56vw;
+    
+}
+
+
+.circle{
+    position: absolute;
+    left: 0;
+    height: 12px;
+    width: 12px;
+    fill: white;
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+.stats{
+    width: 98%;
+    margin: 0 0 0 22px;
+    justify-content: space-between;
+}
