@@ -54,6 +54,7 @@ function play_song(start = false) {
             e.addEventListener("click", e => {
 
                 currentsong.src = ""
+                document.querySelector(".circle").style.left = "0%"
 
                 //    let index = decodedsong.indexOf(`${e.target.textContent}` + ".mp3")          
                 //    console.log(index);
@@ -126,12 +127,36 @@ function duration() {
 }
 
 
-// SEEKBAR WORKING
+// SEEKBAR WORKING and CURRENT TIME SYNCH
 
 function seekbar(){
-    document.querySelector(".seekbar")
+    let seekbar = document.getElementById("seekbari")
+
+    seekbar.addEventListener("click", e =>{
+
+      let percent = (e.offsetX/e.target.getBoundingClientRect().width) * 100
+      console.log(percent);
+      
+        document.querySelector(".circle").style.left = percent + "%"
+
+        currentsong.currentTime = (currentsong.duration*percent)/100
+        
+        
+
+    })
     
 }
+
+// volume setting
+
+document.querySelector(".volume").addEventListener("change", e=>{
+
+    currentsong.volume = e.target.value/100
+       
+})
+
+
+
 
 
 async function main() {
@@ -143,7 +168,23 @@ async function main() {
     duration()
     playpause()
     play_song()
+    seekbar()
 
+volumeimg.addEventListener("click", (e) => {
+   
+    
+    if (e.target.src.includes("volume.svg")) {
+        
+        e.target.src = "mute.svg"
+        currentsong.muted = true;
+    } else {
+        
+        e.target.src = "volume.svg"
+        currentsong.muted = false;
+    }
+
+
+})
 
 }
 main()

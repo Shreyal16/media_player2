@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    user-select: none; /* Disables text selection */
+  }
+
 /* Style the scrollbar */
 ::-webkit-scrollbar {
     width: 8px; /* Width of the scrollbar */
@@ -191,7 +196,7 @@ color: white;
 
 @keyframes scroll-left {
     0% {
-        transform: translateX(0%); /* Start from right side */
+        transform: translateX(20%); /* Start from right side */
     }
     100% {
         transform: translateX(-100%); /* End on the left side */
@@ -223,7 +228,7 @@ color: white;
 
 .seekbar{
     position: relative;
-    height: 2px;
+    height: 3px;
     background-color: white;
     width: 56vw;
     
@@ -232,12 +237,13 @@ color: white;
 
 .circle{
     position: absolute;
-    left: 0;
-    height: 12px;
-    width: 12px;
-    fill: white;
-    background-color: white;
+    left: 0%;
+    height: 15px;
+    width: 15px;
+    background-color: #59cceb;
     border-radius: 10px;
+    transition: all 0.5s;
+ /* transition: property duration timing-function delay; */     
 }
 
 
