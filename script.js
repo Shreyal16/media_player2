@@ -22,6 +22,13 @@ async function getsongs() {
 
 }
 
+// UPDATES THE SONG NAME WHENEVER IT CHANGES
+
+function updateSongName() {
+    let currentSongFile = decodeURI(currentsong.src.split('/Songs/').pop()); // Get the song file name from the full URL
+    songinseekbar.textContent = currentSongFile; // Update the song name in the playbar
+}
+
 // appends songs to library
 
 
@@ -59,7 +66,8 @@ function play_song(start = false) {
                 //    let index = decodedsong.indexOf(`${e.target.textContent}` + ".mp3")          
                 //    console.log(index);
                 songinseekbar.innerHTML = "";
-                songinseekbar.innerHTML = songinseekbar.innerHTML + `${e.target.textContent}`;
+                
+                
 
                 let playbutton = document.getElementById("play")
 
@@ -67,6 +75,9 @@ function play_song(start = false) {
                 currentsong.src = "/Songs/" + encodeURI(`${e.target.textContent}`) + ".mp3"
                 currentsong.play()
 
+                updateSongName()
+
+               
 
             })
         })
@@ -85,10 +96,55 @@ function playpause() {
             currentsong.pause()
             play.src = "play.svg"
         }
+        
 
 
     })
 }
+
+
+
+// NEXT AND PREVIOUS BUTTONS
+
+async function next_button () {
+    next.addEventListener("click", e =>{
+        console.log(currentsong.src);
+        let index = songs.indexOf(currentsong.src)
+ if (index < songs.length-1) {
+    currentsong.src = songs[index+1]
+        currentsong.play()
+        console.log(songs.length);
+        
+} else if(index == songs.length-1) {
+    currentsong.src = songs[1]
+    currentsong.play()    
+}
+updateSongName()
+    })
+}
+
+
+function previous_button () {
+    
+    previous.addEventListener("click", e =>{
+        
+        let index = songs.indexOf(currentsong.src)
+ if (index >= 1) {
+    currentsong.src = songs[index-1]
+        currentsong.play()
+        console.log(songs.length);
+        
+} else if(index == 0) {
+    currentsong.src = songs[songs.length-1]
+    currentsong.play()    
+}
+updateSongName()
+    })
+    
+}
+
+
+
 
 
 // SET CURRENT TIME AND DURATION
@@ -169,6 +225,8 @@ async function main() {
     playpause()
     play_song()
     seekbar()
+    next_button()
+    previous_button()
 
 volumeimg.addEventListener("click", (e) => {
    
